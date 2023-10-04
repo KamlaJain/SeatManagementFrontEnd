@@ -1,0 +1,20 @@
+<div class="seat">
+  <div class="seat__form">
+    <form [formGroup]="seatForm" (ngSubmit)="OnSubmit()">
+      <label for="facilityName">Facility Name:</label>
+      <select formControlName="facilityId">
+        <option
+          *ngFor="let facility of facilities"
+          [value]="facility.facilityId"
+        >
+          {{ facility.facilityName }}
+        </option>
+      </select>
+
+      <label for="seatNumber">Seat Number:</label>
+      <input type="number" formControlName="seatNumber" />
+
+      <button class="seat__form-submitbtn" type="submit"> Submit</button>
+    </form>
+  </div>
+</div>

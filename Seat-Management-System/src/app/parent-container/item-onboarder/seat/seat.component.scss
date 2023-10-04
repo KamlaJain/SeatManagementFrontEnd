@@ -1,0 +1,41 @@
+.seat {
+    font-family: system-ui;
+
+    &__form {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        select,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        &-submitbtn {
+
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #63b2c4;
+            }
+        }
+    }
+}
+

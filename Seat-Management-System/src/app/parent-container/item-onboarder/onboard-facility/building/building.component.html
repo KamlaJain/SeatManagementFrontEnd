@@ -1,0 +1,15 @@
+<div class="building">
+    <div class="building__form">
+      <form [formGroup]="buildingForm" (ngSubmit)="onSubmit()">
+
+        <label for="buildingName">Building Name:</label>
+        <input type="text" formControlName="buildingName" /><br>
+
+        <label for="buildingCode">Building Abbreviation:</label>
+        <input type="text" formControlName="buildingCode" /><br>
+  
+        <button class="building__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

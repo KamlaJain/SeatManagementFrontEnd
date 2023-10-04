@@ -1,0 +1,19 @@
+<div class="cabindeallocation">
+    <div class="cabindeallocation__form">
+      <form [formGroup]="cabinDeallocationForm" (ngSubmit)="onSubmit()">
+
+        <label for="cabinNumber">Cabin Number:</label>
+        <select formControlName="cabinId">
+          <option
+            *ngFor="let cabin of filteredcabins"
+            [value]="cabin.cabinId"
+          >
+            C-{{ cabin.cabinNumber }} (FacilityId: {{cabin.facilityId}})
+          </option>
+        </select>
+       
+        <button class="cabindeallocation__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

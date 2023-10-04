@@ -1,0 +1,23 @@
+<div class="seatallocation">
+    <div class="seatallocation__form">
+      <form [formGroup]="seatAllocationForm" (ngSubmit)="onSubmit()">
+
+        <label for="departmentId">Seat Number:</label>
+        <select formControlName="seatId">
+          <option
+            *ngFor="let seat of filteredSeats"
+            [value]="seat.seatId"
+          >
+            S-{{ seat.seatNumber }} (FacilityId: {{seat.facilityId}})
+          </option>
+        </select>
+        <!-- <button class="seatallocation__form-addbtn"(click)="addSeat()">Add new Department</button> -->
+  
+        <label for="employeeId">Employee Id:</label>
+        <input type="number" formControlName="employeeId" />
+  
+        <button class="seatallocation__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

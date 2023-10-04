@@ -1,0 +1,58 @@
+// Define SCSS variables for common styles
+$primary-color: #007bff;
+$success-color: #29c55a;
+$hover-color: #63b2c4;
+$hover-success-color: #79c7a7;
+
+.facility {
+    font-family: system-ui;
+
+    &__form {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+        &-citybtn,
+        &-buildingbtn {
+            background-color: $primary-color;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+
+        &-submitbtn[type='submit'] {
+            background-color: $success-color;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $hover-success-color;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            select,
+            input {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                width: 90%;
+            }
+        }
+    }
+}

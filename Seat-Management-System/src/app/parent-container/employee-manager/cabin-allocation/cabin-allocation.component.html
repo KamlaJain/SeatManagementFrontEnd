@@ -1,0 +1,22 @@
+<div class="cabinallocation">
+    <div class="cabinallocation__form">
+      <form [formGroup]="cabinAllocationForm" (ngSubmit)="onSubmit()">
+
+        <label for="cabinNumber">Cabin Number:</label>
+        <select formControlName="cabinId">
+          <option
+            *ngFor="let cabin of filteredcabins"
+            [value]="cabin.cabinId"
+          >
+            C-{{ cabin.cabinNumber }} (FacilityId: {{cabin.facilityId}})
+          </option>
+        </select>
+
+        <label for="employeeId">Employee Id:</label>
+        <input type="number" formControlName="employeeId" />
+
+        <button class="cabinallocation__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

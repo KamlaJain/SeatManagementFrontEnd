@@ -1,0 +1,25 @@
+<div class="employee">
+    <div class="employee__form">
+      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+        <label for="departmentId">Department Name:</label>
+        <select formControlName="departmentId">
+          <option
+            *ngFor="let department of departments"
+            [value]="department.departmentId"
+          >
+            {{ department.departmentName }}
+          </option>
+        </select>
+        <!-- <button class="employee__form-addbtn"type="button"(click)="addDepartment()">Add new Department</button> -->
+        <a routerLink="department">Add Department</a>
+
+  
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" formControlName="employeeName" />
+  
+        <button class="employee__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

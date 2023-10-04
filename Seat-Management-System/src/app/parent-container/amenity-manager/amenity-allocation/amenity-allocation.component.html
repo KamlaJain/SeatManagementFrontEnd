@@ -1,0 +1,68 @@
+<div class="amenityAllocation">
+  <div class="amenityAllocation__form">
+    <form [formGroup]="amenityAllocationForm" (ngSubmit)="onSubmit()">
+      <label for="facilityId">Choose Facility:</label>
+      <select formControlName="facilityId">
+        <option
+          *ngFor="let facility of facilities"
+          [value]="facility.facilityId"
+        >
+          {{ facility.facilityName }}
+        </option>
+      </select>
+      <button
+        class="amenityAllocation__form-searchbtn"
+        type="button"
+        (click)="onFilter()"
+      >
+        Search
+      </button>
+      <br />
+      <label for="roomAmenityId">Choose Amenity</label>
+      <select formControlName="roomAmenityId">
+        <option
+          *ngFor="let amenityInFacility of filteredAmenitiesInFacility"
+          [value]="amenityInFacility.roomAmenityId"
+        >
+          Am-{{ amenityInFacility.amenityId }}
+        </option>
+      </select>
+      <br />
+      <label for="meetingRoomId">Meeting Room Number:</label>
+      <select formControlName="meetingRoomId">
+        <option
+          *ngFor="let meetingRoom of filteredMeetingRooms"
+          [value]="meetingRoom.meetingRoomId"
+        >
+          M-{{ meetingRoom.meetingRoomNumber }}
+        </option>
+      </select>
+
+      <button class="amenityAllocation__form-submitbtn" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<!--   
+  <label for="meetingRoomId">Meeting Room Number:</label>
+  <select formControlName="meetingRoomId">
+    <option
+      *ngFor="let meetingRoom of meetingRooms"
+      [value]="meetingRoom.meetingRoomId"
+    >
+      M-{{ meetingRoom.meetingRoomNumber}} (FacilityId: {{meetingRoom.facilityId}})
+    </option>
+  </select>
+
+  
+  <label for="roomAmenityId">Amenities In Facility:</label>
+  <select formControlName="roomAmenityId">
+    <option
+      *ngFor="let amenityInFacility of amenitiesInFacility"
+      [value]="amenityInFacility.roomAmenityId"
+    >
+      Am-{{ amenityInFacility.amenityId }} (FacilityId: {{amenityInFacility.facilityId}})
+    </option>
+  </select>   -->

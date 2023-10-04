@@ -1,0 +1,66 @@
+<div class="seatsreport">
+  <div class="seatsreport__form">
+    <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+      <div class="seatsreport__form-radiobtns">
+        <label>
+          <input
+            type="radio"
+            formControlName="isUnallocatedReport"
+            value="free"
+            (change)="onRadioChange(true)"
+          />
+          Free Seats
+        </label>
+        <label>
+          <input
+            type="radio"
+            formControlName="isUnallocatedReport"
+            value="occupied"
+            (change)="onRadioChange(false)"
+          />
+          Occupied Seats
+        </label>
+      </div>
+      <br />
+      <label for="cityCode">City Code:</label>
+      <select formControlName="cityCode">
+        <option *ngFor="let city of cities" [value]="city.cityCode">
+          {{ city.cityName }} ({{ city.cityCode }})
+        </option>
+      </select>
+      <br />
+      <label for="buildingCode">Building Code:</label>
+      <select formControlName="buildingCode">
+        <option
+          *ngFor="let building of buildings"
+          [value]="building.buildingCode"
+        >
+          {{ building.buildingName }} ({{ building.buildingCode }})
+        </option>
+      </select>
+      <br />
+      <label for="facilityName">Facility Name:</label>
+      <select formControlName="facilityName">
+        <option
+          *ngFor="let facility of facilities"
+          [value]="facility.facilityName"
+        >
+          {{ facility.facilityName }}
+        </option>
+      </select>
+      <br />
+      <label for="floorNumber">Floor:</label>
+      <input type="number" formControlName="floorNumber" />
+
+      <button class="seatsreport__form-submitbtn" type="submit">Submit</button>
+    </form>
+
+    <div class="seatsreport__result" *ngFor="let result of results">
+      <li>
+        {{ result.cityCode }}-{{ result.buildingCode }}-{{
+          result.facilityName
+        }}-{{ result.floorNumber }}--S{{ result.seatNumber }}
+      </li>
+    </div>
+  </div>
+</div>

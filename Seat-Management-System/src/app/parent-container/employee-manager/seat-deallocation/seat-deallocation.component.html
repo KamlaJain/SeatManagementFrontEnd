@@ -1,0 +1,19 @@
+<div class="seatdeallocation">
+    <div class="seatdeallocation__form">
+      <form [formGroup]="seatDeallocationForm" (ngSubmit)="onSubmit()">
+
+        <label for="seatNumber">Seat Number:</label>
+        <select formControlName="seatId">
+          <option
+            *ngFor="let seat of filteredSeats"
+            [value]="seat.seatId"
+          >
+            S-{{ seat.seatNumber }} (FacilityId: {{seat.facilityId}})
+          </option>
+        </select>
+  
+        <button class="seatdeallocation__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

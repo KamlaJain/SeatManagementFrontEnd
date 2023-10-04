@@ -1,0 +1,38 @@
+<div class="facility">
+  <div class="facility__form">
+    <form [formGroup]="facilityForm" (ngSubmit)="onSubmit()">
+      <label for="cityName">City Name:</label>
+      <select formControlName="cityId" required>
+        <option *ngFor="let city of cities" [value]="city.cityId">
+          {{ city.cityName }}
+        </option>
+      </select>
+      <a routerLink="city">Add City</a>
+      <!-- <button class="facility__form-citybtn" type="button" (click)="addCity()">
+        Add new city
+      </button> -->
+
+      <label for="buildingName">Building Name:</label>
+      <select formControlName="buildingId">
+        <option
+          *ngFor="let building of buildings"
+          [value]="building.buildingId"
+        >
+          {{ building.buildingName }}
+        </option>
+      </select>
+      <a routerLink="building">Add Building</a>
+      <!-- <button class="facility__form-buildingbtn" type="button" (click)="addBuilding()">
+        Add new Building
+      </button> -->
+
+      <label for="facilityName">Facility Name:</label>
+      <input type="text" formControlName="facilityName" />
+
+      <label for="floorNumber">Floor Number:</label>
+      <input type="number" formControlName="floorNumber" />
+
+      <button class="facility__form-submitbtn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

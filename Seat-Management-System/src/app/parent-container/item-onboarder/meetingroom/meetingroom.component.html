@@ -1,0 +1,22 @@
+<div class="meetingroom">
+    <div class="meetingroom__form">
+      <form [formGroup]="meetingForm" (ngSubmit)="OnSubmit()">
+
+        <label for="Facility">Facilty Name:</label>
+        <select formControlName="facilityId" required>
+          <option *ngFor="let facility of facilities" [value]="facility.facilityId">
+            {{ facility.facilityName }}
+          </option>
+        </select>
+  
+        <label for="MeetingRoomNumber">MeetingRoom Number:</label>
+        <input type="text" formControlName="meetingRoomNumber" />
+  
+        <label for="seatingCapacity">Seating Capacity:</label>
+        <input type="number" formControlName="seatingCapacity" />
+  
+        <button class="meetingroom__form-submitbtn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  

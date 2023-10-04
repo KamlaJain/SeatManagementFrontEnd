@@ -1,0 +1,21 @@
+<div class="cabin">
+    <div class="cabin__form">
+      <form [formGroup]="cabinForm" (ngSubmit)="OnSubmit()">
+        <label for="facilityName">Facility Name:</label>
+        <select formControlName="facilityId">
+          <option
+            *ngFor="let facility of facilities"
+            [value]="facility.facilityId"
+          >
+            {{ facility.facilityName }}
+          </option>
+        </select>
+  
+        <label for="cabinNumber">Cabin Number:</label>
+        <input type="number" formControlName="cabinNumber" />
+  
+        <button class="cabin__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

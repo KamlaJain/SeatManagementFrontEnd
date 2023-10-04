@@ -1,0 +1,12 @@
+<div class="department">
+    <div class="department__form">
+      <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+
+        <label for="departmentName">Department Name:</label>
+        <input type="text" formControlName="departmentName" /><br>
+  
+        <button class="department__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="amenityDeallocation">
+    <div class="amenityDeallocation__form">
+      <form [formGroup]="amenityDeallocationForm" (ngSubmit)="onSubmit()">
+
+        
+        <label for="roomAmenityId">Amenities In Facility:</label>
+        <select formControlName="roomAmenityId">
+          <option
+            *ngFor="let amenity of filteredAmenities"
+            [value]="amenity.roomAmenityId"
+          >
+            Am-{{ amenity.amenityId }} (FacilityId: {{amenity.facilityId}})- Room: {{amenity.meetingRoomId}}
+          </option>
+        </select>  
+  
+        <button class="amenityDeallocation__form-submitbtn" type="submit"> Submit</button>
+      </form>
+    </div>
+  </div>
+  
