@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EmployeeDTO } from 'src/api/models';
+import { EmployeeDTO } from '../models/employee-dto';
 
 @Injectable({
   providedIn: 'root',

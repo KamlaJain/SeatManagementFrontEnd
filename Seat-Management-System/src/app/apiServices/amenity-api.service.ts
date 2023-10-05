@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RoomAmenityDTO } from 'src/api/models/room-amenity-dto';
+import { RoomAmenityDTO } from 'src/app/models/room-amenity-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -18,9 +18,7 @@ export class AmenityApiService {
     return this.http.post(`${this.baseUrl}`, roomAmenityObject);
   }
 
-
   //https://localhost:7097/api/Amenity?roomAmenityId=0&meetingRoomId=0
-
   public patchAmenityToRoom(
     roomAmenityId: number,
     meetingRoomId: number | null = null

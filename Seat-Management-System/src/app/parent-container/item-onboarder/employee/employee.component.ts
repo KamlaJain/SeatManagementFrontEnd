@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { EmployeeDTO } from 'src/api/models';
 import { DepartmentApiService } from 'src/app/apiServices/department-api.service';
 import { EmployeeApiService } from 'src/app/apiServices/employee-api.service';
+import { EmployeeDTO } from 'src/app/models/employee-dto';
 
 @Component({
   selector: 'app-employee',
@@ -23,7 +23,6 @@ export class EmployeeComponent implements OnInit {
     this.departmentService.getApiDepartment().subscribe((departments) => {
       this.departments = departments as unknown as any[];
     });
-
     this.createNewForm();
   }
 

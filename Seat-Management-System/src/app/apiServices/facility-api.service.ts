@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FacilityDTO } from 'src/api/models';
+import { FacilityDTO } from '../models/facility-dto';
 
 @Injectable({
   providedIn: 'root'

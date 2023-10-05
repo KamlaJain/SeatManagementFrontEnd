@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Router, Routes } from '@angular/router';
-import { BuildingLookUpDTO, CityLookUpDTO, FacilityDTO } from 'src/api/models';
 
 import { BuildingApiService } from 'src/app/apiServices/building-api.service';
 import { CityApiServiceService } from 'src/app/apiServices/city-api-service.service';
 import { FacilityApiService } from 'src/app/apiServices/facility-api.service';
+import { FacilityDTO } from 'src/app/models/facility-dto';
 
 @Component({
   selector: 'app-onboard-facility',
@@ -51,7 +50,14 @@ export class OnboardFacilityComponent implements OnInit {
     };
     console.log(formData);
 
-    this.facilityService.postApiFacility(request).subscribe();
+    this.facilityService.postApiFacility(request).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 
   // addBuilding() {

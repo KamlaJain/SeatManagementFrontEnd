@@ -2,8 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { BuildingLookUpDTO } from 'src/api/models';
 import { BuildingApiService } from 'src/app/apiServices/building-api.service';
+import { BuildingLookUpDTO } from 'src/app/models/building-look-up-dto';
 
 
 @Component({
@@ -33,6 +33,13 @@ export class BuildingComponent implements OnInit {
       buildingCode: formData.buildingCode,
     };
     console.log(response);
-    this.buildingService.postApiBuilding(response).subscribe();
+    this.buildingService.postApiBuilding(response).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 }

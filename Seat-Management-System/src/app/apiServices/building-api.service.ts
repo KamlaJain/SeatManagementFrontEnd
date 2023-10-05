@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BuildingLookUpDTO } from 'src/api/models';
+import { BuildingLookUpDTO } from '../models/building-look-up-dto';
 
 @Injectable({
   providedIn: 'root'

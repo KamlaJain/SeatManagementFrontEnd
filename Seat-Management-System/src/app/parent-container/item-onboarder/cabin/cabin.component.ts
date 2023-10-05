@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { CabinRoomDTO } from 'src/api/models';
 import { CabinApiService } from 'src/app/apiServices/cabin-api.service';
 import { FacilityApiService } from 'src/app/apiServices/facility-api.service';
+import { CabinRoomDTO } from 'src/app/models/cabin-room-dto';
 
 @Component({
   selector: 'app-cabin',

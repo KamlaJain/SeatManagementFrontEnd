@@ -26,7 +26,7 @@ export class AmenityAllocationComponent implements OnInit {
 
   ngOnInit() {
     this.facilityService.getApiFacility().subscribe((facility) => {
-      this.facilities = facility as unknown as any[];
+      this.facilities = facility as unknown as any[];      
     });
 
     this.amenityAllocationForm = this.fb.group({
@@ -62,7 +62,14 @@ export class AmenityAllocationComponent implements OnInit {
     
     const meetingRoomId= this.amenityAllocationForm.controls.meetingRoomId.value;
     const roomAmenityId= this.amenityAllocationForm.controls.roomAmenityId.value;
-    this.amenityService.patchAmenityToRoom(roomAmenityId, meetingRoomId).subscribe();
+    this.amenityService.patchAmenityToRoom(roomAmenityId, meetingRoomId).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
     console.log(roomAmenityId, meetingRoomId)
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CityLookUpDTO } from 'src/api/models';
+import { CityLookUpDTO } from '../models/city-look-up-dto';
 
 @Injectable({
   providedIn: 'root'

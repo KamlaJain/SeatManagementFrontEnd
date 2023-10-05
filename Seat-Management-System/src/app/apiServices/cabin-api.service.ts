@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CabinRoomDTO } from 'src/api/models';
+import { CabinRoomDTO } from '../models/cabin-room-dto';
 
 @Injectable({
   providedIn: 'root'

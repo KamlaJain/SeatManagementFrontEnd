@@ -27,7 +27,14 @@ export class DepartmentComponent implements OnInit{
   onSubmit() {
     const departmentName: string = this.departmentForm.get('departmentName').value;
     console.log(departmentName)
-    this.departmentService.postApiDepartment(departmentName).subscribe();
+    this.departmentService.postApiDepartment(departmentName).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 
 }

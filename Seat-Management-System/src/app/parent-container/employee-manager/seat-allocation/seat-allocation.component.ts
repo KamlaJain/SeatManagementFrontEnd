@@ -40,7 +40,14 @@ export class SeatAllocationComponent implements OnInit {
 
     const seatIdparam = this.seatAllocationForm.controls.seatId.value
     const employeeIdparam = this.seatAllocationForm.controls.employeeId.value
-    this.seatService.patchApiGeneralSeat(seatIdparam,employeeIdparam).subscribe();
+    this.seatService.patchApiGeneralSeat(seatIdparam,employeeIdparam).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 }
 

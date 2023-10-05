@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { GeneralSeatDTO } from 'src/api/models';
 //import { FacilityService, GeneralSeatService } from 'src/api/services';
 import { FacilityApiService } from 'src/app/apiServices/facility-api.service';
 import { SeatApiService } from 'src/app/apiServices/seat-api.service';
+import { GeneralSeatDTO } from 'src/app/models/general-seat-dto';
 
 @Component({
   selector: 'app-seat',

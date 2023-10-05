@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GeneralSeatDTO } from 'src/api/models';
+import { GeneralSeatDTO } from '../models/general-seat-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -22,11 +22,9 @@ export class SeatApiService {
   public patchApiGeneralSeat(seatId: number, employeeId: number | null = null) {
     //const url = `${this.baseUrl}/${seatId}?employeeId=${employeeId}`;
     let url = `${this.baseUrl}/${seatId}`;
-
     if (employeeId !== null) {
       url += `?employeeId=${employeeId}`;
     }
-
     return this.http.patch(url, {});
   }
 
@@ -36,7 +34,7 @@ export class SeatApiService {
     buildingCode: string | '',
     facilityName: string | '',
     floorNumber: number | ''
-  ): Observable<any> {
+  ){
     const url = `${this.baseUrl}/Reports`;
     let queryParams: string[] = [];
     //https://localhost:7097/api/GeneralSeat/Reports?isUnallocatedReport=true&cityCode=TVM&buildingCode=GAN&facilityName=Carestack&floorNumber=10

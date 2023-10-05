@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { CityLookUpDTO } from 'src/api/models';
 import { CityApiServiceService } from 'src/app/apiServices/city-api-service.service';
+import { CityLookUpDTO } from 'src/app/models/city-look-up-dto';
 
 @Component({
   selector: 'app-city',
@@ -34,7 +34,14 @@ export class CityComponent implements OnInit{
       }
   
       console.log(reponse)
-      this.cityService.postApiCity(reponse).subscribe();
+      this.cityService.postApiCity(reponse).subscribe({
+        next: () => {
+          window.alert('Success');
+        },
+        error: (errorDetails) => {
+          window.alert(errorDetails.error);
+        },
+      });
     }
   
   }

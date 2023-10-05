@@ -37,6 +37,13 @@ export class AmenityDeallocationComponent implements OnInit {
     // };
     // console.log(request);
     const roomAmenityId=this.amenityDeallocationForm.controls.roomAmenityId.value
-    this.amenityService.patchAmenityToRoom(roomAmenityId).subscribe();
+    this.amenityService.patchAmenityToRoom(roomAmenityId).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 }

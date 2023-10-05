@@ -15,7 +15,6 @@ export class DepartmentApiService {
   }
 
   public postApiDepartment(departmentName: string){
-    https://localhost:7097/api/Department?departmentName=Accounts
-
+    //https://localhost:7097/api/Department?departmentName=Accounts
     return this.http.post(`${this.baseUrl}?departmentName=${departmentName}`,{});
   }}

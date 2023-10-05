@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { FacilityDTO, MeetingRoomDTO } from 'src/api/models';
 import { FacilityApiService } from 'src/app/apiServices/facility-api.service';
 import { MeetingroomApiService } from 'src/app/apiServices/meetingroom-api.service';
+import { MeetingRoomDTO } from 'src/app/models/meeting-room-dto';
 
 @Component({
   selector: 'app-meetingroom',
@@ -42,6 +42,13 @@ export class MeetingroomComponent implements OnInit{
       seatingCapacity: formData.seatingCapacity   
     }
     console.log(request)
-    this.meetingRoomService.postApiMeetingRoom(request).subscribe()
+    this.meetingRoomService.postApiMeetingRoom(request).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    })
   }
 }

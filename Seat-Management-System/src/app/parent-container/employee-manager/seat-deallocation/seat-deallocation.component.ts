@@ -31,12 +31,16 @@ export class SeatDeallocationComponent implements OnInit {
 
   onSubmit() {
     const seatId = this.seatDeallocationForm.get('seatId').value;
-    // const formData = this.seatDeallocationForm.value;
-    // const request: any = {
-    //   seatId: formData.seatId,
-    // };
+
     console.log(seatId)
-    this.seatService.patchApiGeneralSeat(seatId).subscribe();
+    this.seatService.patchApiGeneralSeat(seatId).subscribe({
+      next: () => {
+        window.alert('Success');
+      },
+      error: (errorDetails) => {
+        window.alert(errorDetails.error);
+      },
+    });
   }
 }
 

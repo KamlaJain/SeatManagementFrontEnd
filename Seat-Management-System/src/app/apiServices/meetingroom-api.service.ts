@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MeetingRoomDTO } from 'src/api/models';
+import { MeetingRoomDTO } from '../models/meeting-room-dto';
 
 @Injectable({
   providedIn: 'root'
